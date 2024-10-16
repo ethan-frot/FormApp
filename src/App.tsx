@@ -19,7 +19,9 @@ function App() {
           <div className="p-6 px-10 flex justify-center items-center flex-col bg-white rounded-md">
             <div>
               <StaticPage />
-              <StepsBar />
+              <StepsBar
+                  currentStep={currentStep}
+              />
 
               {steps[currentStep]}
               <div className="flex justify-end gap-2">
