@@ -5,13 +5,22 @@ import AccountType from "./components/steps/AccountType.tsx";
 import PersonalInformation from "./components/steps/PersonalInformation.tsx";
 import ProfileData from "./components/steps/ProfileData.tsx";
 import SendForm from "./components/steps/SendForm.tsx";
-import ButtonPrevious from "./components/ui/Buttons/ButtonPrevious.tsx";
-import ButtonNext from "./components/ui/Buttons/ButtonNext.tsx";
-
 function App() {
   const [currentStep, setCurrentStep] = useState<number>(0);
 
-  const steps = [<AccountType />, <PersonalInformation />, <ProfileData />];
+  const steps = [
+      <AccountType
+        currentStep={currentStep}
+        setCurrentStep={setCurrentStep}
+      />,
+    <PersonalInformation
+        currentStep={currentStep}
+        setCurrentStep={setCurrentStep}
+    />,
+    <ProfileData
+        currentStep={currentStep}
+        setCurrentStep={setCurrentStep}
+    />];
 
   return (
     <div className="flex justify-center items-center pt-10">
@@ -22,18 +31,7 @@ function App() {
               <StepsBar
                   currentStep={currentStep}
               />
-
               {steps[currentStep]}
-              <div className="flex justify-end gap-2">
-                <ButtonPrevious
-                  currentStep={currentStep}
-                  setCurrentStep={setCurrentStep}
-                />
-                <ButtonNext
-                  currentStep={currentStep}
-                  setCurrentStep={setCurrentStep}
-                />
-              </div>
             </div>
           </div>
       ) : (

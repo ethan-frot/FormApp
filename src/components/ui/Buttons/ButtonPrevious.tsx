@@ -14,11 +14,13 @@ const ButtonPrevious = ({ currentStep, setCurrentStep }: ButtonPreviousProps) =>
                 className="text-gray-300 px-4 py-2"
                 onClick={previousStep}
                 disabled={currentStep === 0}
+                type="button"
             >
                 Previous
             </button>
         </div>
-    )
-}
+    );
+};
+
 
 export default ButtonPrevious;

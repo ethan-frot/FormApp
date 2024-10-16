@@ -1,7 +1,13 @@
 import { useState } from "react";
 import ButtonAccountType from "../ui/Buttons/ButtonAccountType.tsx";
+import ButtonNext from "../ui/Buttons/ButtonNext.tsx";
 
-const AccountType = () => {
+type AccountTypeProps = {
+    currentStep: number;
+    setCurrentStep: (currentStep: (prevStep: number) => number) => void;
+}
+
+const AccountType = ({currentStep, setCurrentStep}: AccountTypeProps) => {
     const [selected, setSelected] = useState<number | null>(null);
 
     return (
@@ -32,6 +38,13 @@ const AccountType = () => {
                         </p>
                     </div>
                 </div>
+            </div>
+            <div className="flex justify-end gap-2">
+                <ButtonNext
+                    type='button'
+                    currentStep={currentStep}
+                    setCurrentStep={setCurrentStep}
+                />
             </div>
         </div>
     );

@@ -13,6 +13,7 @@ const Input = ({ type, placeholder, name, label }: InputProps) => {
         className={`rounded-md text-xl py-2 px-4 text-slate-600 bg-gray-100`}
         placeholder={placeholder}
         name={name}
+        required
       />
     </div>
   );
