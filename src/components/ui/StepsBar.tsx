@@ -1,0 +1,27 @@
+const StepsBar = () => {
+    return (
+        <div className="flex pt-5 pb-8 justify-center gap-10 relative">
+            <hr className="border-gray-300 border-2 w-full absolute z-0 top-10"/>
+            <div className="flex flex-col items-center gap-2 z-1 relative">
+                <p className="py-2 px-4 rounded-full bg-purple-400 text-amber-50 border-purple-400 border-2">
+                    1
+                </p>
+                <p className="text-gray-300">Account Type</p>
+            </div>
+            <div className="flex flex-col items-center gap-2 z-1 relative">
+                <p className="py-2 px-4 rounded-full bg-white text-gray-300 border-gray-300 border-2">
+                    2
+                </p>
+                <p className="text-gray-300">Personal Information</p>
+            </div>
+            <div className="flex flex-col items-center gap-2 z-1 relative   ">
+                <p className="py-2 px-4 rounded-full bg-white text-gray-300 border-gray-300 border-2">
+                    3
+                </p>
+                <p className="text-gray-300">Profile Data</p>
+            </div>
+        </div>
+    )
+}
+
+export default StepsBar;
