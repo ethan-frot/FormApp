@@ -1,9 +1,10 @@
 import StaticPage from "./components/ui/StaticPage";
 import StepsBar from "./components/ui/StepsBar.tsx";
 import AccountType from "./components/steps/AccountType.tsx";
-import ButtonNext from "./components/ui/Buttons/ButtonNext.tsx";
 import PersonalInformation from "./components/steps/PersonalInformation.tsx";
 import ProfileData from "./components/steps/ProfileData.tsx";
+import ButtonPrevious from "./components/ui/Buttons/ButtonPrevious.tsx";
+import ButtonNext from "./components/ui/Buttons/ButtonNext.tsx";
 
 function App() {
   return (
@@ -15,7 +16,10 @@ function App() {
           <AccountType />
           <PersonalInformation />
           <ProfileData />
-          <ButtonNext />
+          <div className="flex justify-end gap-2">
+            <ButtonPrevious />
+            <ButtonNext />
+          </div>
         </div>
       </div>
     </div>
