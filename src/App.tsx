@@ -4,23 +4,39 @@ import StepsBar from "./components/ui/StepsBar.tsx";
 import AccountType from "./components/steps/AccountType.tsx";
 import PersonalInformation from "./components/steps/PersonalInformation.tsx";
 import ProfileData from "./components/steps/ProfileData.tsx";
-import SendForm from "./components/steps/SendForm.tsx";
+import SentForm from "./components/steps/SentForm.tsx";
 function App() {
   const [currentStep, setCurrentStep] = useState<number>(0);
+  const [formData, setFormData] = useState({
+    accountType: "",
+    name: "",
+    email: "",
+    password: "",
+    age: "",
+    areaOfInterest: "",
+    description: ""
+  });
 
   const steps = [
-      <AccountType
+    <AccountType
         currentStep={currentStep}
         setCurrentStep={setCurrentStep}
-      />,
+        formData={formData}
+        setFormData={setFormData}
+    />,
     <PersonalInformation
         currentStep={currentStep}
         setCurrentStep={setCurrentStep}
+        formData={formData}
+        setFormData={setFormData}
     />,
     <ProfileData
         currentStep={currentStep}
         setCurrentStep={setCurrentStep}
-    />];
+        formData={formData}
+        setFormData={setFormData}
+    />
+  ];
 
   return (
     <div className="flex justify-center items-center pt-10">
@@ -35,7 +51,7 @@ function App() {
             </div>
           </div>
       ) : (
-        <SendForm />
+          <SentForm formData={formData} />
       )}
     </div>
   );

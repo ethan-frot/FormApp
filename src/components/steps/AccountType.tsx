@@ -1,14 +1,21 @@
-import { useState } from "react";
+import React from "react";
 import ButtonAccountType from "../ui/Buttons/ButtonAccountType.tsx";
 import ButtonNext from "../ui/Buttons/ButtonNext.tsx";
 
 type AccountTypeProps = {
     currentStep: number;
     setCurrentStep: (currentStep: (prevStep: number) => number) => void;
-}
+    formData: { accountType: string | null };
+    setFormData: React.Dispatch<React.SetStateAction<{ accountType: string | null }>>;
+};
 
-const AccountType = ({currentStep, setCurrentStep}: AccountTypeProps) => {
-    const [selected, setSelected] = useState<number | null>(null);
+const AccountType = ({currentStep, setCurrentStep, formData, setFormData}: AccountTypeProps) => {
+    const handleSelect = (type: string) => {
+        setFormData((prevData) => ({
+            ...prevData,
+            accountType: type,
+        }));
+    };
 
     return (
         <div>
@@ -16,8 +23,8 @@ const AccountType = ({currentStep, setCurrentStep}: AccountTypeProps) => {
             <div className="flex flex-col py-7 gap-5">
                 <div className="flex">
                     <ButtonAccountType
-                        isSelected={selected === 1}
-                        onClick={() => setSelected(1)}
+                        isSelected={formData.accountType === 'Personal'}
+                        onClick={() => handleSelect('Personal')}
                     />
                     <div className="ml-5">
                         <h3 className="font-bold">Personal Account</h3>
@@ -28,8 +35,8 @@ const AccountType = ({currentStep, setCurrentStep}: AccountTypeProps) => {
                 </div>
                 <div className="flex">
                     <ButtonAccountType
-                        isSelected={selected === 2}
-                        onClick={() => setSelected(2)}
+                        isSelected={formData.accountType === 'Business'}
+                        onClick={() => handleSelect('Business')}
                     />
                     <div className="ml-5">
                         <h3 className="font-bold">Business Account</h3>
