@@ -1,7 +1,8 @@
 import StaticPage from "./components/ui/StaticPage";
 import StepsBar from "./components/ui/StepsBar.tsx";
-import AccountTypeSelection from "./components/steps/AccountTypeSelection.tsx";
+import AccountType from "./components/steps/AccountType.tsx";
 import ButtonNext from "./components/ui/Buttons/ButtonNext.tsx";
+import PersonalInformation from "./components/steps/PersonalInformation.tsx";
 
 function App() {
   return (
@@ -10,7 +11,8 @@ function App() {
         <div>
           <StaticPage />
           <StepsBar />
-          <AccountTypeSelection />
+          <AccountType />
+          <PersonalInformation />
           <ButtonNext />
         </div>
       </div>

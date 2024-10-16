@@ -1,7 +1,7 @@
 import { useState } from "react";
 import ButtonAccountType from "../ui/Buttons/ButtonAccountType.tsx";
 
-const AccountTypeSelection = () => {
+const AccountType = () => {
     const [selected, setSelected] = useState<number | null>(null);
 
     return (
@@ -37,4 +37,4 @@ const AccountTypeSelection = () => {
     );
 };
 
-export default AccountTypeSelection;
+export default AccountType;
