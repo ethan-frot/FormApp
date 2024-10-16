@@ -1,50 +1,57 @@
-# React + TypeScript + Vite
+# 🌟 Projet Formulaire Multi-Étapes avec Airtable
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Ce projet est une application de formulaire multi-étapes développée en **React**, qui permet aux utilisateurs de soumettre leurs informations personnelles. Les données sont ensuite enregistrées dans une base **Airtable**.
 
-Currently, two official plugins are available:
+## 📖 Description du projet
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Ce projet a été réalisé dans le cadre d'un projet scolaire et n'a aucun but commercial. L'application permet aux utilisateurs de :
 
-## Expanding the ESLint configuration
+- 📝 Remplir un formulaire en plusieurs étapes
+- ✅ Soumettre leurs informations personnelles
+- 📧 Recevoir un email de confirmation après soumission
+- 🚨 Avertir l'équipe de support par email des nouvelles soumissions
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+Tous les emails envoyés depuis cette application sont à la décharge des utilisateurs qui ont rempli le formulaire.
 
-- Configure the top-level `parserOptions` property like this:
+## ⚙️ Fonctionnalités
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+- **Formulaire Multi-Étapes :** Les utilisateurs peuvent naviguer entre différentes étapes pour compléter leur inscription.
+- **Validation des Données :** Chaque champ du formulaire est validé pour s'assurer que les informations saisies sont correctes.
+- **Intégration avec Airtable :** Les informations soumises sont enregistrées dans une base de données Airtable.
+- **Emails Automatisés :** Les utilisateurs et l'équipe de support reçoivent des emails de confirmation et de notification respectivement.
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+## 🛠️ Technologies utilisées
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+- **Frontend :** React
+- **Gestion de l'état :** React Hooks
+- **Base de données :** Airtable
+- **Styles :** Tailwind CSS
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+## 📥 Installation
+
+1. Clonez le dépôt :
+   ```bash
+   git clone https://github.com/votre-utilisateur/votre-projet.git
+   cd votre-projet
+    ```
+
+2. Installez les dépendances :
+    ```bash
+    Copier le code
+    npm install
+    Créez un fichier .env à la racine du projet et ajoutez vos clés Airtable :
+    ```
+
+3. Créez un fichier .env à la racine du projet et ajoutez vos clés Airtable :
+    ```bash
+    AIRTABLE_API_KEY=your_api_key
+    AIRTABLE_BASE_ID=your_base_id
+    ```
+
+4. Démarrez l'application :
+    ```bash
+    npm start
+    ```
+
+## ⚠️ Avertissement
+**Ce projet est uniquement à des fins éducatives. Toute utilisation commerciale est interdite. Les emails envoyés via cette application sont à la responsabilité des utilisateurs ayant rempli le formulaire.**
