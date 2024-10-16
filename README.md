@@ -32,8 +32,8 @@ Tous les emails envoyés depuis cette application sont à la décharge des utili
 1. Clonez le dépôt :
 
    ```bash
-   git clone https://github.com/votre-utilisateur/votre-projet.git
-   cd votre-projet
+   git clone https://github.com/votre-utilisateur/FormApp.git
+   cd FormApp
    ```
 
 2. Installez les dépendances :
@@ -42,7 +42,7 @@ Tous les emails envoyés depuis cette application sont à la décharge des utili
    npm install
    ```
 
-3. Créez un fichier .env à la racine du projet et ajoutez vos clés Airtable :
+3. Créez un fichier .env à la racine du projet et ajoutez vos clés Airtable _(si ce n'est pas déjà fait)_ :
 
    ```bash
    AIRTABLE_API_KEY=your_api_key
@@ -51,9 +51,9 @@ Tous les emails envoyés depuis cette application sont à la décharge des utili
 
 4. Démarrez l'application :
    ```bash
-   npm start
+   npm run dev
    ```
 
 ## ⚠️ Avertissement
 
-**Ce projet est uniquement à des fins éducatives. Toute utilisation commerciale est interdite. Les emails envoyés via cette application sont à la responsabilité des utilisateurs ayant rempli le formulaire.**
+**Ce projet est uniquement à des fins éducatives. Toute utilisation commerciale est interdite. Les emails envoyés via cette application sont à la responsabilité des utilisateurs ayant rempli le formulaire et copier le projet.**
