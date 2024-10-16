@@ -1,21 +1,26 @@
-import { useState } from "react";
+import {useState} from "react";
 import StaticPage from "./components/ui/StaticPage.tsx";
 import StepsBar from "./components/ui/StepsBar.tsx";
 import AccountType from "./components/steps/AccountType.tsx";
 import PersonalInformation from "./components/steps/PersonalInformation.tsx";
 import ProfileData from "./components/steps/ProfileData.tsx";
 import SentForm from "./components/steps/SentForm.tsx";
+import {Clients, ClientAccountType, ClientDto} from "./utils/types/client.ts";
+
+
 function App() {
   const [currentStep, setCurrentStep] = useState<number>(0);
-  const [formData, setFormData] = useState({
-    accountType: "",
+  const [formData, setFormData] = useState<ClientDto>({
     name: "",
+    accountType: ClientAccountType.PERSONAL,
     email: "",
     password: "",
     age: "",
     areaOfInterest: "",
     description: ""
   });
+  const [clients, setClients] = useState<Clients>([]);
+
 
   const steps = [
     <AccountType
@@ -51,7 +56,10 @@ function App() {
             </div>
           </div>
       ) : (
-          <SentForm formData={formData} />
+          <SentForm
+              formData={formData}
+              setClients={setClients}
+          />
       )}
     </div>
   );

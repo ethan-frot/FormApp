@@ -6,7 +6,7 @@ import ButtonNext from "../ui/Buttons/ButtonNext.tsx";
 type ProfileDataTypeProps = {
     currentStep: number;
     setCurrentStep: (currentStep: (prevStep: number) => number) => void;
-    formData: { age: number; areaOfInterest: string; description: string; };
+    formData: { age: string; areaOfInterest: string; description: string; };
     setFormData: (data: any) => void;
 }
 

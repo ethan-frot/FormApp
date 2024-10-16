@@ -1,4 +1,21 @@
-const SentForm = ({ formData }: { formData: { email: string; name: string; } }) => {
+import { createClient } from "../../utils/airtable";
+import React from "react";
+import { Clients, ClientDto } from "../../utils/types/client.ts";
+
+type SentFormProps = {
+    formData: ClientDto;
+    setClients: React.Dispatch<React.SetStateAction<Clients>>;
+};
+
+const SentForm = ({ formData, setClients }: SentFormProps) => {
+    const sentForm = () => {
+        createClient(formData, setClients);
+    };
+
+    React.useEffect(() => {
+        sentForm();
+    }, []);
+
     return (
         <div className="flex flex-col justify-center items-center gap-5">
             <img src="../../../public/form-checked.svg" alt="form-checked" />
