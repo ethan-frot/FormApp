@@ -1,11 +1,11 @@
 type ButtonPreviousProps = {
     currentStep: number;
-    setCurrentStep: (currentStep: number) => void;
+    setCurrentStep: (currentStep: (prevStep: number) => number) => void;
 }
 
 const ButtonPrevious = ({ currentStep, setCurrentStep }: ButtonPreviousProps) => {
     const previousStep = () => {
-        setCurrentStep(currentStep - 1);
+        setCurrentStep((prevStep) => Math.max(prevStep - 1, 0));
     };
 
     return (
@@ -13,6 +13,7 @@ const ButtonPrevious = ({ currentStep, setCurrentStep }: ButtonPreviousProps) =>
             <button
                 className="text-gray-300 px-4 py-2"
                 onClick={previousStep}
+                disabled={currentStep === 0}
             >
                 Previous
             </button>
