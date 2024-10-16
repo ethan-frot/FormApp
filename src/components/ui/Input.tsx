@@ -2,15 +2,12 @@ type InputProps = {
   type?: "text" | "number" | "email" | "password";
   placeholder?: string;
   name: string;
+  label: string;
 };
-const Input = ({ type, placeholder, name }: InputProps) => {
-  const capitalizeFirstLetter = (string: string) => {
-    return string.charAt(0).toUpperCase() + string.slice(1);
-  };
-
+const Input = ({ type, placeholder, name, label }: InputProps) => {
   return (
     <div className="flex flex-col gap-2">
-      <label>{capitalizeFirstLetter(name)}</label>
+      <label>{label}</label>
       <input
         type={type || "text"}
         className={`rounded-md text-xl py-2 px-4 text-slate-600 bg-gray-100`}

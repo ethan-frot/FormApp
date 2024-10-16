@@ -7,16 +7,19 @@ const PersonalInformation = () => {
                 type='text'
                 placeholder='Jhon Doe'
                 name='name'
+                label='Name'
             />
             <Input
                 type='email'
                 placeholder='johndoe@gmail.com'
                 name='email'
+                label='Email'
             />
             <Input
                 type='text'
                 placeholder='********'
                 name='password'
+                label='Password'
             />
         </div>
     );

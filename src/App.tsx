@@ -3,6 +3,7 @@ import StepsBar from "./components/ui/StepsBar.tsx";
 import AccountType from "./components/steps/AccountType.tsx";
 import ButtonNext from "./components/ui/Buttons/ButtonNext.tsx";
 import PersonalInformation from "./components/steps/PersonalInformation.tsx";
+import ProfileData from "./components/steps/ProfileData.tsx";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
           <StepsBar />
           <AccountType />
           <PersonalInformation />
+          <ProfileData />
           <ButtonNext />
         </div>
       </div>
