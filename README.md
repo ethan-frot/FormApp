@@ -30,28 +30,30 @@ Tous les emails envoyés depuis cette application sont à la décharge des utili
 ## 📥 Installation
 
 1. Clonez le dépôt :
+
    ```bash
    git clone https://github.com/votre-utilisateur/votre-projet.git
    cd votre-projet
-    ```
+   ```
 
 2. Installez les dépendances :
-    ```bash
-    Copier le code
-    npm install
-    Créez un fichier .env à la racine du projet et ajoutez vos clés Airtable :
-    ```
+
+   ```bash
+   npm install
+   ```
 
 3. Créez un fichier .env à la racine du projet et ajoutez vos clés Airtable :
-    ```bash
-    AIRTABLE_API_KEY=your_api_key
-    AIRTABLE_BASE_ID=your_base_id
-    ```
+
+   ```bash
+   AIRTABLE_API_KEY=your_api_key
+   AIRTABLE_BASE_ID=your_base_id
+   ```
 
 4. Démarrez l'application :
-    ```bash
-    npm start
-    ```
+   ```bash
+   npm start
+   ```
 
 ## ⚠️ Avertissement
+
 **Ce projet est uniquement à des fins éducatives. Toute utilisation commerciale est interdite. Les emails envoyés via cette application sont à la responsabilité des utilisateurs ayant rempli le formulaire.**
