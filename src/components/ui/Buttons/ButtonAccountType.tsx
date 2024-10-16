@@ -7,7 +7,7 @@ const ButtonAccountType = ({accountType, isSelected, onClick }: {accountType: st
             >
                 <div className={`p-4 rounded-md border-2 border-purple-400 ${isSelected ? 'bg-purple-400' : ''} group`}>
                     <img
-                        src="../../../../public/account-type.svg"
+                        src="/account-type.svg"
                         alt="account-type"
                         className={` ${isSelected ? 'filter brightness-0 invert' : ''}`}
                     />
