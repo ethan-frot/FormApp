@@ -14,6 +14,7 @@ const getClients = (setClients: React.Dispatch<React.SetStateAction<Clients>>) =
         }
 
         const clients: Clients = records.map((record) => ({
+            id: record.id,
             firstName: record.get("firstName") as string,
             lastName: record.get("lastName") as string,
             email: record.get("email") as string,
