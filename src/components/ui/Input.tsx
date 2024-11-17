@@ -1,7 +1,7 @@
 import React from "react";
 
 type InputProps = {
-    type?: "text" | "number" | "email" | "password";
+    type?: "text" | "number" | "email" ;
     placeholder?: string;
     name: string;
     label: string;

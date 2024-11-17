@@ -1,26 +1,27 @@
-export enum ClientAccountType {
-    PERSONAL = "Personal",
-    BUSINESS = "Business",
+export enum ClientStatus {
+    NOT_CONTACTED = "Not contacted",
+    CONTACT_IN_FUTURE = "Contact in future",
+    CONTACTED = "Contacted",
 }
 
 export type Client = {
-    name: string;
-    accountType: ClientAccountType;
+    firstName: string;
+    lastName: string;
     email: string;
-    password: string;
-    age: string;
-    areaOfInterest: string;
-    description: string;
+    phoneNumber: string;
+    notes: string;
+    createdAt: Date;
+    status: ClientStatus;
 };
 
 export type Clients = Client[];
 
 export type ClientDto = {
-    name: string;
-    accountType: ClientAccountType;
+    firstName: string;
+    lastName: string;
     email: string;
-    password: string;
-    age: string;
-    areaOfInterest: string;
-    description: string;
+    phoneNumber: string;
+    notes: string;
+    createdAt: Date;
+    status: ClientStatus;
 };

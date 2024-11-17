@@ -7,11 +7,18 @@ const createClient = (
   setClients: React.Dispatch<React.SetStateAction<Clients>>
 ) => {
   const base = connectAirtable();
-  const TABLE_NAME = "Testers";
+  const TABLE_NAME = "Clients";
   const table = base(TABLE_NAME);
 
+  const formatDateToISO = (date: Date): string => {
+    return date.toISOString().split('T')[0];
+  };
+
   const newClient = {
-    fields: { ...clientDto },
+    fields: {
+      ...clientDto,
+      createdAt: formatDateToISO(new Date()),
+    },
   };
 
   table.create([newClient], (error, records) => {
@@ -23,6 +30,7 @@ const createClient = (
           ...previousClients,
           {
             ...record.fields,
+            createdAt: new Date(record.fields.createdAt as string),
           } as Client,
         ];
       });

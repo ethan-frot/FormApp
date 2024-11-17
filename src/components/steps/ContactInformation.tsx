@@ -6,14 +6,14 @@ import ButtonNext from "../ui/Buttons/ButtonNext.tsx";
 type ProfileDataTypeProps = {
     currentStep: number;
     setCurrentStep: (currentStep: (prevStep: number) => number) => void;
-    formData: { age: string; areaOfInterest: string; description: string; };
+    formData: { email: string; phoneNumber: string; };
     setFormData: (data: any) => void;
 }
 
-const ProfileData = ({currentStep, setCurrentStep, formData, setFormData}: ProfileDataTypeProps) => {
+const ContactInformation = ({currentStep, setCurrentStep, formData, setFormData}: ProfileDataTypeProps) => {
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        setCurrentStep((prevStep) => Math.min(prevStep + 1, 3));
+        setCurrentStep((prevStep) => Math.min(prevStep + 1, 2));
     };
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -26,9 +26,8 @@ const ProfileData = ({currentStep, setCurrentStep, formData, setFormData}: Profi
 
     return (
     <form onSubmit={handleSubmit} className="flex flex-col gap-8">
-        <Input type="number" placeholder="20" name="age" label="Age" value={formData.age} onChange={handleChange}/>
-        <Input type="text" placeholder="Frontend" name="areaOfInterest" label="Area of interest" value={formData.areaOfInterest} onChange={handleChange}/>
-        <Input type="text" placeholder="Lorem ipsum" name="description" label="Bio / Description" value={formData.description} onChange={handleChange}/>
+        <Input type="email" placeholder="jhon.doe@gmail.com" name="email" label="Email" value={formData.email} onChange={handleChange}/>
+        <Input type="number" placeholder="+33" name="phoneNumber" label="Phone number" value={formData.phoneNumber} onChange={handleChange}/>
         <div className="flex justify-end gap-2">
             <ButtonPrevious currentStep={currentStep} setCurrentStep={setCurrentStep}/>
             <ButtonNext type='submit' currentStep={currentStep} setCurrentStep={setCurrentStep}/>
@@ -38,4 +37,4 @@ const ProfileData = ({currentStep, setCurrentStep, formData, setFormData}: Profi
     ;
 };
 
-export default ProfileData;
+export default ContactInformation;

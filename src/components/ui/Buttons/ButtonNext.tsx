@@ -7,7 +7,7 @@ type ButtonNextProps = {
 const ButtonNext = ({ currentStep, setCurrentStep, type }: ButtonNextProps) => {
     const handleNextClick = () => {
         if (type === 'button') {
-            setCurrentStep((prevStep) => Math.min(prevStep + 1, 3));
+            setCurrentStep((prevStep) => Math.min(prevStep + 1, 2));
         }
     };
 

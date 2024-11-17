@@ -15,28 +15,20 @@ const StepsBar = ({currentStep} : StepsBarProps) => {
         <div className="flex pt-5 pb-8 justify-center gap-10 relative">
             <hr className="border-gray-300 border-2 w-full absolute z-0 top-10" />
 
-            {/* Etape 1 */}
+            {/* Step 1 */}
             <div className="flex flex-col items-center gap-2 z-1 relative">
                 <p className={`py-2 px-4 rounded-full border-2 ${getStepStyle(0)}`}>
                     1
                 </p>
-                <p className="text-gray-300">Account Type</p>
+                <p className="text-gray-300">Personal Information</p>
             </div>
 
-            {/* Etape 2 */}
+            {/* Step 2 */}
             <div className="flex flex-col items-center gap-2 z-1 relative">
                 <p className={`py-2 px-4 rounded-full border-2 ${getStepStyle(1)}`}>
                     2
                 </p>
-                <p className="text-gray-300">Personal Information</p>
-            </div>
-
-            {/* Etape 3 */}
-            <div className="flex flex-col items-center gap-2 z-1 relative">
-                <p className={`py-2 px-4 rounded-full border-2 ${getStepStyle(2)}`}>
-                    3
-                </p>
-                <p className="text-gray-300">Profile Data</p>
+                <p className="text-gray-300">Contact Information</p>
             </div>
         </div>
     );
