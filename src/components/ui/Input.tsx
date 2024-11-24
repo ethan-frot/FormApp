@@ -6,10 +6,12 @@ type InputProps = {
     name: string;
     label: string;
     value: string | number;
+    pattern?: string;
+    title?: string;
     onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
 };
 
-const Input = ({ type, placeholder, name, label, value, onChange }: InputProps) => {
+const Input = ({ type, placeholder, name, label, value, pattern, title, onChange }: InputProps) => {
     return (
         <div className="flex flex-col gap-2">
             <label htmlFor={name}>{label}</label>
@@ -20,6 +22,8 @@ const Input = ({ type, placeholder, name, label, value, onChange }: InputProps) 
                 name={name}
                 id={name}
                 value={value}
+                pattern={pattern}
+                title={title}
                 onChange={onChange}
                 required
             />
