@@ -1,14 +1,14 @@
-// components/ui/EditClientForm.tsx
-import React, { useState, useEffect } from "react";
-import { Client, ClientStatus } from "../../utils/types/client";
-import { handleEdit } from "../../utils/airtable/clientActions";
+import {useState, useEffect} from "react";
+import {Client, ClientStatus} from "../../utils/types/client";
+import {handleEdit} from "../../utils/airtable/clientActions";
 
 interface EditClientFormProps {
     client: Client;
     onClose: () => void;
+    onUpdateClient: (id: string, updatedNotes: string, updatedStatus: ClientStatus) => void;
 }
 
-const EditClientForm: React.FC<EditClientFormProps> = ({ client, onClose }) => {
+const EditClientForm = ({client, onClose, onUpdateClient}: EditClientFormProps) => {
     const [notes, setNotes] = useState(client.notes);
     const [status, setStatus] = useState(client.status);
 
@@ -19,6 +19,7 @@ const EditClientForm: React.FC<EditClientFormProps> = ({ client, onClose }) => {
 
     const handleSave = () => {
         handleEdit(client.id, notes, status);
+        onUpdateClient(client.id, notes, status);
         onClose();
     };
 

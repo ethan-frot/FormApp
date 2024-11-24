@@ -1,13 +1,12 @@
-// AdminSinglePage.tsx
-import React, { useEffect, useState } from "react";
-import { Clients, Client } from "../utils/types/client.ts";
+import {useEffect, useState} from "react";
+import {Clients, Client, ClientStatus} from "../utils/types/client.ts";
 import getClients from "../utils/airtable/getClients.ts";
-import { handleDelete } from "../utils/airtable/clientActions.ts";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faEdit, faTrashAlt } from "@fortawesome/free-solid-svg-icons";
+import {handleDelete} from "../utils/airtable/clientActions.ts";
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {faEdit, faTrashAlt} from "@fortawesome/free-solid-svg-icons";
 import EditClientForm from "../components/ui/EditClientForm";
 
-const AdminSinglePage: React.FC = () => {
+const AdminSinglePage = () => {
     const [clients, setClients] = useState<Clients>([]);
     const [isEditing, setIsEditing] = useState(false);
     const [selectedClient, setSelectedClient] = useState<Client | null>(null)
@@ -31,6 +30,16 @@ const AdminSinglePage: React.FC = () => {
     const handleCloseEditForm = () => {
         setIsEditing(false);
         setSelectedClient(null);
+    };
+
+    const updateClient = (id: string, updatedNotes: string, updatedStatus: ClientStatus) => {
+        setClients(prevClients =>
+            prevClients.map(client =>
+                client.id === id
+                    ? {...client, notes: updatedNotes, status: updatedStatus}
+                    : client
+            )
+        );
     };
 
     return (
@@ -77,7 +86,11 @@ const AdminSinglePage: React.FC = () => {
             </div>
 
             {isEditing && selectedClient && (
-                <EditClientForm client={selectedClient} onClose={handleCloseEditForm} />
+                <EditClientForm
+                    client={selectedClient}
+                    onClose={handleCloseEditForm}
+                    onUpdateClient={updateClient}
+                />
             )}
         </div>
     );
