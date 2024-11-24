@@ -1,4 +1,4 @@
-import { Clients } from "../types/client.ts";
+import {Clients, ClientStatus} from "../types/client.ts";
 import connectAirtable from "./connection.ts";
 import React from "react";
 
@@ -13,6 +13,11 @@ const getClients = (setClients: React.Dispatch<React.SetStateAction<Clients>>) =
             return;
         }
 
+        if (!records) {
+            console.error("No records fetched from Airtable.");
+            return;
+        }
+
         const clients: Clients = records.map((record) => ({
             id: record.id,
             firstName: record.get("firstName") as string,
@@ -21,7 +26,7 @@ const getClients = (setClients: React.Dispatch<React.SetStateAction<Clients>>) =
             phoneNumber: record.get("phoneNumber") as string,
             notes: record.get("notes") as string,
             createdAt: new Date(record.get("createdAt") as string),
-            status: record.get("status") as string,
+            status: record.get("status") as ClientStatus,
         }));
 
         setClients(clients);
